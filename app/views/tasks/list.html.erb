@@ -1,0 +1,43 @@
+  <div class="title flex between">
+    <h1>Your tasks list</h1>
+    <h2><%= link_to "new task", 'tasks/new' %></h2>
+  </div>
+  <div class="flex">
+    <ul>
+      <% @tasks.each do |task| %>
+        <li class="flex">
+          <div class="task">
+            <%= link_to task.name, task_path(task) %>
+          </div>
+          <div class="task-control flex between">
+            <div class="control checkmark">
+              <% if task.completed %>
+                <%= link_to uncheck_path(task: task),
+                method: :patch do %>
+                <i class="far fa-check-square"></i>
+                <% end %>
+              <% else %>
+                <i class="far fa-square"></i>
+              <% end %>
+              </div>
+            <div class="control edit">
+              <%= link_to edit_path(task) do%>
+              <i class="far fa-edit"></i>
+              <% end %>
+            </div>
+            <div class="control delete">
+              <%= link_to task_path(task),
+                method: :delete,
+                data: { confirm: "Voulez-vous supprimer cette tache ?" } do %>
+                <i class="fas fa-trash-alt"></i>
+              <% end %>
+            </div>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
+
+<!-- <i class="far fa-square"></i> -->
+<!-- <i class="far fa-check-square"></i> -->

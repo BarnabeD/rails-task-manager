@@ -1,0 +1,35 @@
+// Place all the styles related to the tasks controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.container {
+  background-color: #ffff;
+}
+
+li {
+  justify-content: space-between;
+  border: solid 1px;
+  border-radius: 5px;
+  background-color: darkgrey;
+  padding: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+.between {
+  justify-content: space-between;
+}
+
+.task-control {
+  width: 60px;
+  margin-left: 30px
+}
+
+.control {
+  opacity: 0.5;
+}
+
+.control:hover {
+  opacity: 1;
+}
+
+.flex {
+  display: flex;
+}
