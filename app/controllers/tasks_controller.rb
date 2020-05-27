@@ -45,8 +45,9 @@ class TasksController < ApplicationController
   end
 
   def uncheck
-    @task = Task.find(params[:id])
+    @task = Task.find(params[:data])
     @task.update(completed: true)
+    raise
     # redirect_to task_path(@task)
   end
 

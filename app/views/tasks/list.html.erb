@@ -12,8 +12,8 @@
           <div class="task-control flex between">
             <div class="control checkmark">
               <% if task.completed %>
-                <%= link_to uncheck_path(task: task),
-                method: :patch do %>
+                <!-- <%= link_to uncheck_path, :data => {:id => task.id}, method: :patch do %> -->
+                <%= link_to uncheck_path, method: :patch, :"data-attribute" => "yeah!" do %>
                 <i class="far fa-check-square"></i>
                 <% end %>
               <% else %>
